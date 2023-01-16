@@ -1,9 +1,9 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-def my_decorator(route):
-    def jobs():
-        return render_template( index.html )  
-    route(jobs + "/")
+@app.route('/')
+@app.route('/jobs')
+def jobs():
+   return render_template('index.html')
+
